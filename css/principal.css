@@ -324,7 +324,9 @@ div.detalle__trabajos p {
     /*justify-content: star end center stretch space-around space-between space-evenly;*/
     /*align-content: star end center stretch space-around space-between space-evenly;*/
     justify-content: center;
-    align-content: center;
+	align-content: center;
+	animation: modal;
+	animation-duration: 1s;
 }
 .modal__control{
     display: none;
@@ -337,7 +339,10 @@ div.detalle__trabajos p {
     top: 0;
     overflow: auto;
 }
-
+@keyframes modal {
+	from{top: -330px; opacity: 0;}
+	to{top:0; opacity:1;}
+}
 
 /* =========================== MODEL CONTACTO ===============================*/
 form{
