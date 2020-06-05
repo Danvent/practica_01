@@ -1,100 +1,156 @@
-(function() {
-	"use strict";
- 
- 	document.addEventListener('DOMContentLoaded', function(){
-	
-		//Campos Datos usuarios
-		var nombre = document.getElementById('nombre');
-		var apellido = document.getElementById('apellido');
-		var email = document.getElementById('email');
-		
-		//Campos pases
-		var pase_dia = document.getElementById('pase_dia');
-		var pase_dosdias = document.getElementById("pase_dosdias");
-		var pase_completo = document.getElementById("pase_completo");
-		
-		//Botones y divs
-		var calcular = document.getElementById('calcular');
-		var errorDiv = document.getElementById('error');
-		var botonRegistro = document.getElementById('btnRegistro');
-		var listado_productos = document.getElementById('lista-productos');
-		var suma = document.getElementById('suma-total');
-		
-		
-		//Extras
-		
-		var camisas = document.getElementById('camisa_evento');
-		var etiquetas= document.getElementById('etiquetas');
-		
-		calcular.addEventListener(`click`,calcularMontos);
-		pase_dia.addEventListener('blur',mostrarDias);
-		pase_dosdias.addEventListener('blur',mostrarDias);
-		pase_completo.addEventListener('blur',mostrarDias);
-		
-		function calcularMontos(event){
-			event.preventDefault();
-			//console.log("has hecho click en calcular");
-			if(pase_dia.value === '' && pase_dosdias.value ==='' && pase_completo.value ===''){
-				alert("Debes elegir un boleto");
-				regalo.focus();
-			}else {
-				var boletosDia = parseInt(pase_dia.value, 10)||0;
-				var	boletos2Dias= parseInt(pase_dosdias.value,10 )||0;
-				var	boletoCompleto = parseInt(pase_completo.value,10 )||0;
-				var cantCamisas = parseInt(camisas.value,10 )||0;
-				var cantEtiquetas = parseInt(etiquetas.value,10 )||0;
-				
-				var totalPagar = (boletosDia*30)+(boletos2Dias*45)+(boletoCompleto*50)+((cantCamisas*10)*0.93)+(cantEtiquetas*2);
-				console.log(totalPagar);
-				
-				var listadoProductos= [];
-				if(boletosDia >=1){
-					listadoProductos.push(boletosDia +' Pases por día');
-				}
-				if(boletos2Dias >=1){
-					listadoProductos.push(boletos2Dias +' Pases por 2 días');
-				}
-				if(boletoCompleto >=1){
-				listadoProductos.push(boletoCompleto +' Pases completos');
-			 	}
-				if(cantCamisas >=1){
-					listadoProductos.push(cantCamisas +' Camisas');
-				}
-				if(cantEtiquetas >=1){
-					listadoProductos.push(cantEtiquetas +' Paquetes de etiquetas');
-				}
-				listado_productos.style.display ='block';
-				listado_productos.innerHTML ='';
-				for(var i=0 ; i< listadoProductos.length ; i++){
-					listado_productos.innerHTML += listadoProductos[i]+'<br/>';
-				}
-				suma.innerHTML = '$'+ totalPagar.toFixed(2);
-				
-				
-				console.log(listadoProductos);
-			}
-		}
-		
-		function mostrarDias(){
-			var boletosDia = parseInt(pase_dia.value, 10)||0;
-				var	boletos2Dias= parseInt(pase_dosdias.value,10 )||0;
-				var	boletoCompleto = parseInt(pase_completo.value,10 )||0;
-			
-			var diasElegidos = [];
-			
-			if(boletosDia >=1){
-				diasElegidos.push('viernes');
-			}
-			if(boletos2Dias >=1){
-				diasElegidos.push('viernes','sabado');
-			}
-			if(boletoCompleto >=1){
-				diasElegidos.push('viernes','sabado','domingo');
-			}
-			for(var i=0 ; i<diasElegidos.length;i++){
-				document.getElementById(diasElegidos[i]).style.display = 'block';
-			}
-		}
-	
-    }); //DOM CONTENT LOADED
-})();
+
+const CambioIntermedio = document.getElementById("trabajos__ofertas");
+const CI_i = CambioIntermedio.getElementsByTagName("i");
+const CI_s = CambioIntermedio.getElementsByTagName("span");
+
+function   ChangeBasicos() {
+   const span_intermedios = ['Lenguaje de marcado para paginas web',
+                            'CCS3 Hoja de estilos en cascada',
+                            'JavaScript Lenguaje de programación',
+                            'Seguridad para todos tus proyectos'];
+
+    const icons_intermedios = ['fab fa-html5','fab fa-css3-alt','fab fa-js','fas fa-user-secret'];
+
+    for(let i=0;i<CI_i.length;i++){ 
+            CI_i[i].setAttribute('class',icons_intermedios[i]);
+            CI_s[i].innerHTML = span_intermedios[i];
+        }
+}
+
+function   ChangeIntermedios() {
+    const span_intermedios = ['JavaScript Lenguaje de programación',
+                            'Python Lenguaje de programación',
+                            'Total acceso al repositorio del proyecto',
+                            'SHH red cifrada para mayor seguridad'];
+    
+    const icons_intermedios = ['fab fa-node-js','fab fa-python','fab fa-github','fas fa-shield-alt'];
+
+    for(let i=0;i<CI_i.length;i++){ 
+            CI_i[i].setAttribute('class',icons_intermedios[i]);
+            CI_s[i].innerHTML = span_intermedios[i];
+        }
+}
+
+function  ChangeAvanzados() {
+    const span_intermedios = ['React es una biblioteca Javascrip',
+                            'Diseño 100% Responsive Design',
+                            'Base de datos personalizada ',
+                            'Servidores 100% dedicados'];
+
+    const icons_intermedios = ['fab fa-react','fas fa-mobile-alt','fas fa-database','fas fa-server'];
+
+    for(let i=0;i<CI_i.length;i++){ 
+            CI_i[i].setAttribute('class',icons_intermedios[i]);
+            CI_s[i].innerHTML = span_intermedios[i];
+        }
+}
+
+
+
+/*----------------MODAL-------------*/
+
+const modal = document.getElementById("control_modal")
+
+function modalAbrir(){
+    modal.style.display = "block"
+}
+function modalCerrar(){
+    modal.style.display = "none";
+}
+
+/*----------------Hamb Movil-------------------*/
+var HaMov = document.getElementById("hamb_movil")
+var S_Mov = document.getElementById("slider_barra_movil")
+function cerrar_nav(){
+    S_Mov.style.left = "-100%";
+    HaMov.style.display = "block";
+}
+function abrir_nav(){
+    HaMov.style.display = "none";
+    S_Mov.style.left ="0px";
+}
+
+let slider = document.querySelector(".slider__desarrollo")
+let sliderIndividual = document.querySelectorAll(".contenido__slider")
+let sliderImg = document.querySelectorAll(".contenido__slider img")
+let spanSlider = document.querySelector(".texto__desarrollo p span ")
+let contador = 0;
+let intervalo = 8000;
+const slider__imagenes = ['02','03','04','05']
+const slider_span = ['Arquitectura y contenido web',
+                     'Testing de la paginas en los servidores',
+                     'Posicionamiento (seo)',
+                     'Marketing online',
+                     'Recolección de datos']
+/*------------*/
+
+
+window.addEventListener("resize", function(){
+    width = sliderIndividual[0].clientWidth;
+})
+
+setInterval(function(){
+    slides();
+},intervalo);
+
+function slides(){
+    contador++;
+    if(contador == 1){
+        setTimeout(function(){
+            sliderIndividual[contador].style.display = "inherit";
+            sliderIndividual[contador-1].style.display = "none";
+            spanSlider.innerHTML = slider_span[contador-1]
+            sliderImg[contador].setAttribute("src",`image/desarrollo/desarrollo${slider__imagenes[contador-1]}.svg`)
+        },6000)
+    }
+    if(contador == 2){
+        setTimeout(function(){    
+            sliderIndividual[contador].style.display = "inherit";
+            sliderImg[contador].setAttribute("src",`image/desarrollo/desarrollo${slider__imagenes[contador-1]}.svg`)
+            spanSlider.innerHTML = slider_span[contador-1]
+            slider.style.transition = "transform .12s"
+            sliderIndividual[contador-1].style.display = "none";
+        },6000)
+    }
+    if(contador == 3){
+        setTimeout(function(){
+            sliderIndividual[contador].style.display = "inherit";
+            sliderIndividual[contador-1].style.display = "none";
+            sliderImg[contador].setAttribute("src",`image/desarrollo/desarrollo${slider__imagenes[contador-1]}.svg`)
+            slider.style.transition = "transform .12s";
+            spanSlider.innerHTML = slider_span[contador-1]
+        },6000)
+    }
+    if(contador == 4){
+        setTimeout(function(){
+            sliderIndividual[contador].style.display = "inherit";
+            sliderIndividual[contador-1].style.display = "none";
+            sliderImg[contador].setAttribute("src",`image/desarrollo/desarrollo${slider__imagenes[contador-1]}.svg`)
+            slider.style.transition = "transform .12s";
+            spanSlider.innerHTML = slider_span[contador-1]
+        },6000)
+    }
+    if(contador == 5){
+        setTimeout(function(){
+            spanSlider.innerHTML = slider_span[contador-1];
+            sliderIndividual[contador-1].style.display = "none";
+            contador = 0;
+            sliderIndividual[contador].style.display = "inherit";
+            slider.style.transition = "transform .12s";
+        },6000)
+    }
+}
+
+window.onload = function(){
+	document.getElementById('Proy_Basico').addEventListener('click',ChangeBasicos,true);
+    document.getElementById('Proy_Intermedio').addEventListener('click',ChangeIntermedios,true);
+    document.getElementById('Proy_Avanzado').addEventListener('click',ChangeAvanzados,true);
+    document.getElementById("btn_slider_movil").addEventListener('click',cerrar_nav,true);
+    document.getElementById("btn_abrir_slider").addEventListener('click',abrir_nav,true);
+};
+
+window.addEventListener("click",function(e){
+    if(e.target === reposo_modal){
+        modal.style.display = "none";
+    }
+});

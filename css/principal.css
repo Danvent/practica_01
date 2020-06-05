@@ -78,38 +78,6 @@ html{
 	width: 98%;
 	margin: 0 auto;
 }
-
-@media only screen and (min-width:520px) {
-	.contenedor {
-	width: 95%;
-}
-}
-@media only screen and (min-width:900px) {
-	.contenedor {
-	width: 90%;
-	}
-	#PRECIOS .contenedor {
-		width: 80%!important;
-	}
-	h1.nombre__sitio{
-		font-size: 10vw;
-		margin: 0;
-	}
-	div.informacion__sitio {
-		width: 70%;
-		margin:0 auto;
-		margin-top: 50px;
-	}
-	div.contenido__header{
-		padding-top: 10px;
-	}
-}
-@media only screen and (min-width:992px) {
-	.contenedor {
-	width: 90%;
-	max-width: 1100px;
-}
-}
 h2{
 	font-family: 'Oswald', sans-serif;
 	font-size: 2.4em;
@@ -214,13 +182,6 @@ h1.nombre__sitio{
 /* ==========================================================================
 							        FIN-HEROE
    ========================================================================== */
- 
-@media only screen and (min-width:768px){
-	div.menu__movil{
-		display: none;
-	}
-}
-
 
 /* ==========================================================================
 							  INICIO-BARRA DE NAVEGACIÓN
@@ -231,11 +192,6 @@ div.barra {
 	padding: 10px 0;
 }
 
-@media only screen and (min-width:768px) {
-	div.logo {
-		width: 33%;
-	}
-}
 /** Navegacion principal**/
 nav.navegador {
     display: grid;
@@ -244,11 +200,6 @@ nav.navegador {
     align-items: center;
 }
 
-@media screen and (min-width : 768){
-	nav.navegador {
-		grid-template-columns: 4fr 1fr;
-	}
-}
 nav.navegador a{
     font-family: var(--Oswaldo);
 	color: var(--white-color);
@@ -302,33 +253,10 @@ div.proyecto__trabajos{
 	padding: 15px;
 	margin-top: 50px;
 }
-
-@media only screen and (max-width:620px) {
-	div.proyecto__trabajos {
-		width: 100%;
-	}
-	div.detalle__trabajos:nth-child(2){
-		display: none;
-	}
-}
-@media only screen and (min-width:620px) {
-	div.proyecto__trabajos {
-		width: 80%;
-	}
-}
-@media only screen and (min-width:708px) {
-	div.proyecto__trabajos {
-		width: 70%;
-	}
-}
 .float-rigth {
     float: right;
 }
-@media only screen and (min-width:921px) {
-	div.proyecto__trabajos{
-		width: 50%;
-	}
-}
+
 nav.menu__trabajos {
 	width: 100%;
 	border-bottom: 1px solid var(--celeste-color);
@@ -338,11 +266,7 @@ nav.menu__trabajos {
 nav.menu__trabajos a{
 	cursor: pointer;
 }
-@media only screen and (min-width:768px){
-	nav.menu__trabajos {
-		display: table;
-	}
-}
+
 nav.menu__trabajos a{
 	display: block;
 	text-align: center;
@@ -351,11 +275,7 @@ nav.menu__trabajos a{
 	margin-bottom: 10px;
 	font-size: 1.2em;
 }
-@media only screen and (min-width:768px){
-	nav.menu__trabajos a {
-		display: table-cell;
-	}
-}
+
 nav.menu__trabajos a i,
 div.detalle__trabajos p i {
 	color: var(--celeste-color);
@@ -390,8 +310,9 @@ div.detalle__trabajos p {
     align-content: center;
     justify-content: center;
     background: var(--white-color);
-    gap: 15px;
-    border-radius: 0px 10px 10px 0px;
+    gap: 10px;
+	border-radius: 0px 10px 10px 0px;
+	color: white;
 }
 
 #reposo_modal{
@@ -425,42 +346,6 @@ form{
     border-radius: 10px 0px 0px 10px;
     padding: 15px;
 }
-@media screen and (max-width : 718px){
-	#reposo_modal{
-		grid-template: auto / 300px;
-	}
-	form{
-		border-radius: 10px ;
-	}
-	.modal__informacion{
-		display: none;
-	}
-}
-@media screen and (min-width : 718px){
-	.modal__informacion{
-		grid-template: 110px 170px 170px / repeat(2,140px);
-	}
-	#reposo_modal{
-		grid-template: repeat(1, auto) / repeat(2, 330px)
-	}
-}
-@media screen and (min-width : 830px){
-	.modal__informacion{
-		grid-template: 110px 170px 170px / repeat(2,160px);
-	}
-	#reposo_modal{
-		grid-template: repeat(1, auto) / repeat(2, 380px)
-	}
-}
-@media screen and (min-width : 950px){
-	.modal__informacion{
-		grid-template: 110px 170px 170px / repeat(2,180px);
-	}
-	#reposo_modal{
-		grid-template: repeat(1, auto) / repeat(2, 450px)
-	}
-}
-
 form .grupo{
     position: relative;
     margin: 20px ;
@@ -554,12 +439,37 @@ input:focus~.barra__modal::before{
     align-self: center;
 }
 
+.modal__informacion .item:nth-child(n+3){
+    background:  linear-gradient(to right, #B06AB3, #4568DC);
+}
+
 .modal__informacion i {
-    color: var(--celeste-color);
+    color: var(--white-color);
     font-size: 3rem;
     padding: 15px 0px;
 }
-
+.announcement {
+	position: relative;
+	border: 3px solid currentColor;
+	border-top: 0;
+	margin: 5px;
+	flex-direction: column;
+}
+.announcement:before,
+.announcement:after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	border-top: 3px solid currentColor;
+	height: 0;
+	width: 15px;
+}
+.announcement:before {
+	left: -3px;
+}
+.announcement:after {
+	right: -3px;
+}
 .btn {
     border: 2px solid #0099CC;
 	padding: 10px;
@@ -584,12 +494,6 @@ input:focus~.barra__modal::before{
     justify-self: flex-end;
     border: 0;
     padding-bottom: 50px;
-}
-
-
-@keyframes modal{
-    from{top:-330px; opacity: 0;}
-    to{top: 0; opacity: 1;}
 }
 
 /* ========================= FIN MODEL INFORMACIÓN =================================*/
@@ -623,25 +527,6 @@ div.servicios {
 	border-radius: 10px;
 	cursor: pointer;
 }
-@media screen and (max-width : 1200px){
-	div.servicio__contenido{
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: auto ;
-		gap: 15px;
-		padding: 15px 15px;
-	}
-}
-
-@media screen and (max-width : 700px){
-	div.servicio__contenido{
-		grid-template-columns:1fr;
-		grid-template-rows: auto ;
-		gap: 15px;
-		padding: 15px 15px;
-	}
-}
-
-
 
 
 /* ==========================================================================
@@ -687,20 +572,6 @@ div.texto__desarrollo p span {
 	text-transform: uppercase;
 }
 
-@media screen and (max-width : 1000px) {
-	section.desarrollo {
-		grid-template: 1fr / 1fr;
-		grid-template-areas: ". texto__desarrollo"
-						 "img__desarrollo slider__desarrollo";
-		margin-bottom: 50px;
-	}
-
-	section.contenido__slider h4 {
-		margin-block-end: 0px;
-		margin-block-start: 0px;
-		height: auto;
-	}
-}
 /* ==========================================================================
 							     INICIO-SLIDER
    ========================================================================== */
@@ -735,13 +606,10 @@ div.texto__desarrollo p span {
 .contenido__slider:nth-child(n+2){
 	display: none;
 }
-
 .slider__desarrollo{
 	display: flex;
 	width: 100%;
 }
-
-
 .contenido__slider> img {
 	width: 50%;
 
@@ -755,38 +623,8 @@ div.texto__desarrollo p span {
 	text-align: justify;
 	line-height: 30px;
 }
-@media screen and (max-width:900px){
-    .contenido__slider > img{
-        width: 250px;
-    }
-	section.contenido__slider{
-		width: 92%;
-	}
-    .contenido__slider > div{
-        width: 40%;
-    }
-}
 
 
-@media screen and (max-width:685px){
-    section.contenido__slider{
-		width: 95%;
-	   flex-direction: column-reverse;
-	   height: auto;
-	   text-align: center;
-	   margin: 0px;
-	}
-
-    section.contenido__slider > div{
-        width: 80%;
-	}
-
-	section.contenido__slider h4 {
-		margin-block-end: 0em;
-		margin-block-start: 0em;
-		height: auto;
-	}
-}
 /* ==========================================================================
 							     FIN-SLIDER
    ========================================================================== */
@@ -836,11 +674,6 @@ ul.resumen__trabajos li {
 	color: var(--white-color);
 	font-size: 24px;
 }
-@media only screen and (min-width:768px){
-	ul.resumen__trabajos li {
-		width: 25%;
-	}
-}
 p.numero {
 	color: var(--celeste-color);
 	font-size: 4em;
@@ -859,12 +692,6 @@ p.numero {
 ul.lista__precios > li {
 	padding: 10px;
 }
-@media only screen and (min-width:768px) {
-	ul.lista__precios > li {
-		float: left;
-		width: 33.3%;
-	}
-}
 div.tabla__precio {
 	background-color: #ffffff;
 	border: 1px solid #e1e1e1;
@@ -872,28 +699,20 @@ div.tabla__precio {
 	padding: 40px 0;
 	text-align: center;
 	transition: all .5s ease;
-	
 }
-
 div.tabla__precio p{
 	font-size: 60px;
 	font-weight: 400;
 	display: inline;
 }
-
 div.tabla__precio p sup, div.tabla__precio h3 p{
 	font-size: 20px;
 	color: #ABB8C0;
 	font-weight: 600;
 }
-
 div.tabla__precio p sub{
 	font-size: 13px;
 }
-
-
-
-
 div.tabla__precio:hover {
 	transform: scale(1.1);
 	border: 1px solid var(--celeste-color);
@@ -901,7 +720,6 @@ div.tabla__precio:hover {
     -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .08);
     box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .08);
 }
-
 div.tabla__precio ul li {
 	font-family: 'PT Sans', sans-serif;
 	font-size: 14px;
@@ -949,15 +767,6 @@ div.testimoniales {
 	margin-bottom: 70px;
 	
 }
-
-@media screen and (max-width : 950px){
-	div.testimoniales {
-		grid-template-columns: 1fr;
-		margin-bottom: 0px;
-		gap: 15px;
-	}
-}
-
 div.testimonial {
 	display: grid;
 	grid-template: auto auto auto/15% 10% auto;
@@ -1055,13 +864,6 @@ footer .contenedor > div {
 	padding: 0px 20px;
 	font-size: 12px;
 }
-@media only screen and (min-width:768px) {
-	footer .contenedor > div {
-		width: 33.3%;
-		float: left;
-	}
-}
-
 footer h3 {
 	color: var(--white-color);
 	text-transform: uppercase;
@@ -1161,24 +963,7 @@ div.logo__movil img {
     width: 180px;
     padding: 5px 0px;
 }
-@media screen and (max-width : 770px){
-	div.barra {
-		display: none;
-	}
-	.barra__movil{
-		display: block;
-	}
-	
-}
 
-@media screen and (min-width : 770px){
-	#hamb_movil{
-		display: none!important;
-	}
-	#slider_barra_movil{
-		left: -100%!important;
-	}
-}
 
 /*======================FIN NAV MOVIL MIN-WIDTH 770PX=============================*/
 
@@ -1264,4 +1049,62 @@ div.menu-trigger:hover:before { color: #fcfeff; }
 						  FIN SLIDER NAV MOVIL
    ========================================================================== */
 
+/* ==========================================================================
+						  FIN SLIDER NAV MOVIL
+   ========================================================================== */
 
+.error{
+	height: 100%;
+	background: linear-gradient(to right, #28254C, #4568DC);
+	display: grid;
+	grid-template: auto/ 35%;
+	text-align: center;
+
+	justify-content: center;
+	align-content: center;
+}
+.error__control{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+  
+.erro_inf {
+	background-color: #332F63;
+	border: 1px solid transparent;
+	border-radius: 20px;
+	color: #8C8AA7;
+	text-align: center;
+	padding: 25px;
+}
+.erro_inf img {
+	width: 100%;
+	margin-top: -60px;
+	margin-right: -150px;
+}
+.erro_inf span{
+	color: white;
+}
+.erro_inf button{
+	font-family: 'roboto';
+	background-color: #FF5E65;
+	color: white;
+	border: 2px solid  transparent;
+	border-radius: 15px;
+	text-align: center;
+	width: 80%;
+	height: 40px;
+	font-size: 16px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+.erro_inf button:hover{
+  background: linear-gradient(to right,#4568DC, #28254C);
+  border: 2px solid white;
+}
+/* ==========================================================================
+						  FIN SLIDER NAV MOVIL
+   ========================================================================== */
