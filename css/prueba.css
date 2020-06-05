@@ -1,0 +1,1267 @@
+:root{
+    --celeste-color: #1998ff;
+    --white-color: #ffffff;
+	--black-color: #313337;
+	--Oswaldo: 'Oswald', sans-serif;
+    /*Tipografía*/
+    --normal:12px;
+	--colorTextos: #49454567;
+    /* Espaciado*/
+    --space:10px;
+}
+/*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+   html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+
+/*
+ * A better looking default horizontal rule
+ */
+
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+   .browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+html{
+	box-sizing: border-box;
+}
+*,*::before,*::after{
+	box-sizing: border-box;
+}
+/** Globales **/
+.contenedor {
+	width: 98%;
+	margin: 0 auto;
+}
+
+@media only screen and (min-width:520px) {
+	.contenedor {
+	width: 95%;
+}
+}
+@media only screen and (min-width:900px) {
+	.contenedor {
+	width: 90%;
+	}
+	#PRECIOS .contenedor {
+		width: 80%!important;
+	}
+	h1.nombre__sitio{
+		font-size: 10vw;
+		margin: 0;
+	}
+	div.informacion__sitio {
+		width: 70%;
+		margin:0 auto;
+		margin-top: 50px;
+	}
+	div.contenido__header{
+		padding-top: 10px;
+	}
+}
+@media only screen and (min-width:992px) {
+	.contenedor {
+	width: 90%;
+	max-width: 1100px;
+}
+}
+h2{
+	font-family: 'Oswald', sans-serif;
+	font-size: 2.4em;
+	text-transform: uppercase;
+	text-align: center;
+}
+h3 {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 1.8em;
+	margin: 0;
+	text-align: center;
+}
+.button {
+	background-color: var(--celeste-color);
+	padding: 10px 40px;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: var(--Oswaldo);
+	text-decoration: none;
+	font-size: 1em;
+	margin-top: 20px;
+	display: inline-block;
+	transition: all .3s ease;
+	border: 2px solid var(--celeste-color);
+}
+
+.button.transparente {
+	background-color: transparent;
+	border: 2px solid var(--white-color);
+}
+.button.transparente:hover {
+	border: 2px solid var(--celeste-color);
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.button:hover{
+	background-color: var(--celeste-color);		
+	cursor: pointer;	
+}
+
+body{
+	background-color: #f2f2f2;
+	font-family: var(--Oswaldo);
+}
+
+/* ==========================================================================
+							      INICIO-HEROE
+   ========================================================================== */
+div.hero {
+	background-image: url(../image/encabezado.jpg) ;
+	height: 100vh;
+	background-position: center;
+	background-size: cover;
+}
+div.contenido__header{
+	padding-top: 60px;
+}	
+nav.redes__sociales a{
+	color: #ffffff;
+	font-size: 2em;
+	margin-right: 20px;
+}
+nav.redes__sociales a:last-child{
+	margin-right: 0;
+}
+div.informacion__sitio{
+	text-align: center;
+	color: #ffffff;
+}
+div.informacion__sitio p{
+	margin: 0;
+	display: inline;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+div.informacion__sitio p i{
+	color: var(--celeste-color);
+	font-size: 2rem;
+}
+p.fecha{
+	float: left;
+}
+p.ciudad{
+	float: right;
+	text-align: right;
+}
+p.slogan {
+	text-transform: none!important;
+}
+p.slogan span {
+	font-weight: bold;
+}
+h1.nombre__sitio{
+	font-family: 'PT Sans', sans-serif;
+	text-transform: uppercase;
+	font-size: 5.9vw;	
+}
+/* ==========================================================================
+							        FIN-HEROE
+   ========================================================================== */
+ 
+@media only screen and (min-width:768px){
+	div.menu__movil{
+		display: none;
+	}
+}
+
+
+/* ==========================================================================
+							  INICIO-BARRA DE NAVEGACIÓN
+   ========================================================================== */
+
+div.barra {
+	background-color: #ccc;
+	padding: 10px 0;
+}
+
+@media only screen and (min-width:768px) {
+	div.logo {
+		width: 33%;
+	}
+}
+/** Navegacion principal**/
+nav.navegador {
+    display: grid;
+    grid-template-columns: 4fr  1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+@media screen and (min-width : 768){
+	nav.navegador {
+		grid-template-columns: 4fr 1fr;
+	}
+}
+nav.navegador a{
+    font-family: var(--Oswaldo);
+	color: var(--white-color);
+	font-size: 1.2em;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: all .6s ease;
+	width: 100%;
+	text-align: center;
+}
+nav.navegador a:hover{
+	color: var(--celeste-color);
+	font-size: 1.6em;
+	cursor: pointer;
+}
+div.logo {
+	align-self: flex-start;
+	justify-self: stretch;
+}
+div.logo img{
+	width: 200px;
+}
+/* ==========================================================================
+							  FIN-BARRA DE NAVEGACIÓN
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+					INICIO-SECTION DE PROYECTOS/TRABAJOS
+   ========================================================================== */
+section.seccion__texto p {
+	padding-bottom: 25px;
+}
+section.proyecto{
+	position: relative;
+}
+div.contenedor__video{
+	max-width: 100%;
+	overflow-x: hidden;
+}
+div.contenido__proyecto{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+div.proyecto__trabajos{
+	background-color: rgba(255, 255, 255, .8);
+	padding: 15px;
+	margin-top: 50px;
+}
+
+@media only screen and (max-width:620px) {
+	div.proyecto__trabajos {
+		width: 100%;
+	}
+	div.detalle__trabajos:nth-child(2){
+		display: none;
+	}
+}
+@media only screen and (min-width:620px) {
+	div.proyecto__trabajos {
+		width: 80%;
+	}
+}
+@media only screen and (min-width:708px) {
+	div.proyecto__trabajos {
+		width: 70%;
+	}
+}
+.float-rigth {
+    float: right;
+}
+@media only screen and (min-width:921px) {
+	div.proyecto__trabajos{
+		width: 50%;
+	}
+}
+nav.menu__trabajos {
+	width: 100%;
+	border-bottom: 1px solid var(--celeste-color);
+	padding-bottom: 10px;
+}
+
+nav.menu__trabajos a{
+	cursor: pointer;
+}
+@media only screen and (min-width:768px){
+	nav.menu__trabajos {
+		display: table;
+	}
+}
+nav.menu__trabajos a{
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	font-family: var(--Oswaldo);
+	margin-bottom: 10px;
+	font-size: 1.2em;
+}
+@media only screen and (min-width:768px){
+	nav.menu__trabajos a {
+		display: table-cell;
+	}
+}
+nav.menu__trabajos a i,
+div.detalle__trabajos p i {
+	color: var(--celeste-color);
+	font-size: 1.6em;
+	margin-right: 10px;
+}
+div.detalle__trabajos {
+	margin-top: 20px;
+	border-bottom: 1px solid var(--black-color);
+	padding: 0 20px;
+}
+div.detalle__trabajos:nth-child(2){
+	border: none;
+}
+div.detalle__trabajos p {
+	margin-bottom: 	20px;
+	font-size: 20px;
+}
+
+/* ==========================================================================
+					   FIN-SECTION DE PROYECTOS/TRABAJOS
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+							     Inicio-Model
+   ========================================================================== */
+.modal__informacion{
+    display: grid;
+    grid-template: 90px 170px 170px/repeat(2, 200px);
+    align-content: center;
+    justify-content: center;
+    background: var(--white-color);
+    gap: 15px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#reposo_modal{
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: grid;
+    grid-template: repeat(1, auto) / repeat(2, 450px);
+    text-align: center;
+    /*justify-content: star end center stretch space-around space-between space-evenly;*/
+    /*align-content: star end center stretch space-around space-between space-evenly;*/
+    justify-content: center;
+    align-content: center;
+}
+.modal__control{
+    display: none;
+    animation-name: modal;
+    animation-duration: 1s;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow: auto;
+}
+
+
+/* =========================== MODEL CONTACTO ===============================*/
+form{
+    background: var(--white-color);
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 10px 0px 0px 10px;
+    padding: 15px;
+}
+@media screen and (max-width : 718px){
+	#reposo_modal{
+		grid-template: auto / 300px;
+	}
+	form{
+		border-radius: 10px ;
+	}
+	.modal__informacion{
+		display: none;
+	}
+}
+@media screen and (min-width : 718px){
+	.modal__informacion{
+		grid-template: 110px 170px 170px / repeat(2,140px);
+	}
+	#reposo_modal{
+		grid-template: repeat(1, auto) / repeat(2, 330px)
+	}
+}
+@media screen and (min-width : 830px){
+	.modal__informacion{
+		grid-template: 110px 170px 170px / repeat(2,160px);
+	}
+	#reposo_modal{
+		grid-template: repeat(1, auto) / repeat(2, 380px)
+	}
+}
+@media screen and (min-width : 950px){
+	.modal__informacion{
+		grid-template: 110px 170px 170px / repeat(2,180px);
+	}
+	#reposo_modal{
+		grid-template: repeat(1, auto) / repeat(2, 450px)
+	}
+}
+
+form .grupo{
+    position: relative;
+    margin: 20px ;
+}
+
+input{
+    background: none;
+    color: #c6c6c6;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--colorTextos);
+}
+
+input:focus{ 
+    outline: none;
+    color: #5e5d5d;
+}
+
+label{
+    color: var(--colorTextos);
+    font-size: 16px;
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    transition: 0.5s ease all;
+    pointer-events: none;
+}
+
+
+input:focus~label,
+input:valid~label{
+    top: -14px;
+    font-size: 12px;
+    color: #2196f3;
+}
+.barra__modal{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.barra__modal::before{
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(to right, #B06AB3, #4568DC);
+    transition: 0.3s ease width;
+    left: 0;
+}
+
+input:focus~.barra__modal::before{
+    width: 100%;
+}
+
+
+.form button{
+    font-family: 'roboto';
+    background-color: var(--white-color);
+    color: var(--black-color);
+    border: 2px solid  #4568DC;
+    width: 50%;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.form button:hover{
+	background: linear-gradient(to right, #B06AB3, #4568DC);
+	color: var(--white-color);
+}
+
+#mensaje{
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;    
+    height: 150px;
+    border-color: #d9d9d9;
+}
+
+/* ========================= FIN MODAL CONTACTO ===========================*/
+
+
+/* ======================== INICIO INFORMACIÓN ============================*/
+
+.modal__informacion .item{
+    border:1px solid var(--black-color);
+    align-self: center;
+}
+
+.modal__informacion i {
+    color: var(--celeste-color);
+    font-size: 3rem;
+    padding: 15px 0px;
+}
+
+.btn {
+    border: 2px solid #0099CC;
+	padding: 10px;
+	color: var(--black-color); 
+    text-align: center;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+	margin-block-end: 0;
+    margin-block-start: 0;
+}
+
+.btn:hover {
+	background: linear-gradient(to right, #B06AB3, #4568DC);
+	color: var(--white-color);
+	cursor: pointer;
+}
+
+.modal__informacion .item:nth-child(2){
+    align-self: flex-start;
+    justify-self: flex-end;
+    border: 0;
+    padding-bottom: 50px;
+}
+
+
+@keyframes modal{
+    from{top:-330px; opacity: 0;}
+    to{top: 0; opacity: 1;}
+}
+
+/* ========================= FIN MODEL INFORMACIÓN =================================*/
+/* ==========================================================================
+							     FIN-Modal
+   ========================================================================== */
+
+
+   /* ==========================================================================
+							  INICIO-SERVICIOS
+   ========================================================================== */
+div.servicio__contenido{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-gap: 25px;
+	padding: 30px 30px;
+	text-align: center;
+	overflow:hidden;
+}
+div.servicios img{
+    height: 250px;
+	transform:scale(0.7);
+}
+div.servicios:hover img {
+	-webkit-transform:scale(0.9);
+	transform:scale(0.9);
+	transition-duration: 0.4s;
+}
+div.servicios {
+	box-shadow: 0px 0px 10px 5px rgba(0, 0 ,0 ,0.2);
+	border-radius: 10px;
+	cursor: pointer;
+}
+@media screen and (max-width : 1200px){
+	div.servicio__contenido{
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto ;
+		gap: 15px;
+		padding: 15px 15px;
+	}
+}
+
+@media screen and (max-width : 700px){
+	div.servicio__contenido{
+		grid-template-columns:1fr;
+		grid-template-rows: auto ;
+		gap: 15px;
+		padding: 15px 15px;
+	}
+}
+
+
+
+
+/* ==========================================================================
+							     FIN-SERVICIOS
+   ========================================================================== */
+
+
+ /* ==========================================================================
+							     INICIO-DESARROLLO
+   ========================================================================== */
+section.desarrollo{
+	display: grid;
+	grid-template: 0.5fr 1.5fr/ 0.9fr 1.5fr;
+	grid-template-areas: ". texto__desarrollo"
+						 "img__desarrollo slider__desarrollo";
+	margin: 30px 0px 50px 20px;
+}
+
+div.texto__desarrollo {
+	grid-area: texto__desarrollo;
+	text-align: center;
+}
+div.img__desarrollo {
+	grid-area: img__desarrollo;
+}
+div.img__desarrollo img {
+	width: 100%;
+}
+div.slider__desarrollo{
+	grid-area: slider__desarrollo;
+	justify-items: center;
+}
+div.texto__desarrollo p i {
+	color: var(--celeste-color);
+    font-size: 2em;
+    margin-right: 10px;
+}
+div.texto__desarrollo p span {
+	font-family: var(--Oswaldo);
+	font-weight: normal;
+    font-size: 2em;
+	margin-right: 10px;
+	text-transform: uppercase;
+}
+
+@media screen and (max-width : 1000px) {
+	section.desarrollo {
+		grid-template: 1fr / 1fr;
+		grid-template-areas: ". texto__desarrollo"
+						 "img__desarrollo slider__desarrollo";
+		margin-bottom: 50px;
+	}
+
+	section.contenido__slider h4 {
+		margin-block-end: 0px;
+		margin-block-start: 0px;
+		height: auto;
+	}
+}
+/* ==========================================================================
+							     INICIO-SLIDER
+   ========================================================================== */
+
+.contenedor__slider{
+    width: 100%;
+	overflow: hidden;
+	align-self: center;
+}
+.contenido__slider{
+	width: 92%;
+    height: 350px;
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	padding: 25px;
+	justify-content: space-around;
+	color: var(--white-color);
+	border-radius: 18px 18px 18px 18px;
+	flex-shrink: 0;
+	margin: 0px 30px;
+}
+.contenido__slider a {
+	cursor: all-scroll;
+}
+.contenido__slider:nth-child(odd){
+	background: #00BFB7;
+}
+.contenido__slider:nth-child(even){
+	background: #332863;
+}
+.contenido__slider:nth-child(n+2){
+	display: none;
+}
+
+.slider__desarrollo{
+	display: flex;
+	width: 100%;
+}
+
+
+.contenido__slider> img {
+	width: 50%;
+
+}
+.contenido__slider > div {
+	width: 80%;
+}
+
+.contenido__slider > h4 {
+	font-size: 1.2em!important;
+	text-align: justify;
+	line-height: 30px;
+}
+@media screen and (max-width:900px){
+    .contenido__slider > img{
+        width: 250px;
+    }
+	section.contenido__slider{
+		width: 92%;
+	}
+    .contenido__slider > div{
+        width: 40%;
+    }
+}
+
+
+@media screen and (max-width:685px){
+    section.contenido__slider{
+		width: 95%;
+	   flex-direction: column-reverse;
+	   height: auto;
+	   text-align: center;
+	   margin: 0px;
+	}
+
+    section.contenido__slider > div{
+        width: 80%;
+	}
+
+	section.contenido__slider h4 {
+		margin-block-end: 0em;
+		margin-block-start: 0em;
+		height: auto;
+	}
+}
+/* ==========================================================================
+							     FIN-SLIDER
+   ========================================================================== */
+
+
+
+
+/* ==========================================================================
+							     FIN-DESARROLLO
+   ========================================================================== */
+
+
+ /* ==========================================================================
+							     INICIO-CONTADOR
+   ========================================================================== */
+div.parallax::before{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-filter: brightnees(.8);
+	filter: brightness(.8);
+}
+div.contador {
+	position: relative;
+	height: auto;
+}
+div.contador::before {
+	background-image: url(../image/01.jpg);
+	content: '';
+}
+ul.resumen__trabajos{
+	position: relative;
+	padding: 120px 0;
+}
+ul.resumen__trabajos li {
+	width: 50%;
+	float: left;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: var(--Oswaldo);
+	color: var(--white-color);
+	font-size: 24px;
+}
+@media only screen and (min-width:768px){
+	ul.resumen__trabajos li {
+		width: 25%;
+	}
+}
+p.numero {
+	color: var(--celeste-color);
+	font-size: 4em;
+	display: block;
+	margin: 0 0 10px 0;
+	font-family: var(--Oswaldo);
+}
+ /* ==========================================================================
+							     FIN-CONTADOR
+   ========================================================================== */
+
+
+ /* ==========================================================================
+							     INICIO-TABLA DE PRECIOS
+   ========================================================================== */
+ul.lista__precios > li {
+	padding: 10px;
+}
+@media only screen and (min-width:768px) {
+	ul.lista__precios > li {
+		float: left;
+		width: 33.3%;
+	}
+}
+div.tabla__precio {
+	background-color: #ffffff;
+	border: 1px solid #e1e1e1;
+	max-height: 440px;
+	padding: 40px 0;
+	text-align: center;
+	transition: all .5s ease;
+	
+}
+
+div.tabla__precio p{
+	font-size: 60px;
+	font-weight: 400;
+	display: inline;
+}
+
+div.tabla__precio p sup, div.tabla__precio h3 p{
+	font-size: 20px;
+	color: #ABB8C0;
+	font-weight: 600;
+}
+
+div.tabla__precio p sub{
+	font-size: 13px;
+}
+
+
+
+
+div.tabla__precio:hover {
+	transform: scale(1.1);
+	border: 1px solid var(--celeste-color);
+	transform: scale(1.05);
+    -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .08);
+    box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .08);
+}
+
+div.tabla__precio ul li {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	color: #868686;
+	line-height: 26px;
+}
+div.tabla__precio ul li::before {
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 5px;
+	font-size: 20px;
+	color: green;
+	-webkit-font-smoothing: antialiased;
+	content: '\f00c';
+}
+div.tabla__precio ul li:nth-child(odd){
+	background: #F1F3F5;
+}
+div.tabla__precio h3 {
+	font-family: var(--Oswaldo);
+	font-size: 16px;
+	text-transform: uppercase;
+}
+div.tabla__precio p.numero {
+	color: var(--black-color);
+	margin-top: 20px 0;
+}
+/* ==========================================================================
+							     FIN-TABLA DE PRECIOS
+   ========================================================================== */
+
+
+/* ==========================================================================
+							     INICIO-TESTIMONIOS
+   ========================================================================== */
+
+div.testimoniales {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 25px;
+	margin-bottom: 70px;
+	
+}
+
+@media screen and (max-width : 950px){
+	div.testimoniales {
+		grid-template-columns: 1fr;
+		margin-bottom: 0px;
+		gap: 15px;
+	}
+}
+
+div.testimonial {
+	display: grid;
+	grid-template: auto auto auto/15% 10% auto;
+    grid-template-areas: "logo__testimonial testimonio testimonio"
+                         ". testimonio testimonio"
+						 "img__testimonio img__testimonio autor"; 
+	background-color: white;
+	border: 1px solid #e1e1e1;
+	padding: 10px;
+
+}
+div.logo__testimonial{
+	grid-area: logo__testimonial;
+    font-size: 2rem;
+    color: var(--celeste-color);
+}
+div.testimonio{
+	grid-area: testimonio;
+}
+div.testimonio p {
+	margin-top: 0px;
+	margin-left: 10px;
+	text-align: justify;
+	font-size: 0.8em;
+}
+div.img__testimonio{
+	grid-area: img__testimonio;
+}
+div.img__testimonio img {
+	width: 100%;
+	border-radius: 50%;
+}
+div.autor{
+	grid-area: autor;
+	align-self: center;
+	padding-left: 15px;
+	color: var(--celeste-color);
+}
+div.autor span{
+	color: var(--black-color);
+	text-transform: uppercase;	
+	font-family: 'Lucida Sans';
+}
+
+/* ==========================================================================
+							     FIN-TESTIMONIAL
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+							     INICIO-NEWSLETTER
+   ========================================================================== */
+
+div.newsletter {
+	position: relative;
+	height: auto;
+}
+div.newsletter::before {
+	background-image: url(../image/bg-newsletter.jpg);
+	content: '';
+}
+div.newsletter .contenido {
+	padding: 100px 0;
+	color: var(--white-color);
+	text-align: center;
+	position: relative;
+}
+div.newsletter .contenido p {
+	font-size: 1.2em;
+	text-transform: lowercase;
+}
+div.newsletter .contenido h3 {
+	color: var(--white-color);
+	text-transform: uppercase;
+	font-size: 7vw;
+	font-family: 'PT Sans', sans-serif;
+}
+/* ==========================================================================
+							     FIN-NEWSLETTER
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+							     INICIO-FOOTER
+   ========================================================================== */
+footer.site__footer {
+	background-color: #353535;
+	padding-top: 40px;
+	text-align: center;
+}
+footer .contenedor > div {
+	color: var(--white-color);
+	padding: 0px 20px;
+	font-size: 12px;
+}
+@media only screen and (min-width:768px) {
+	footer .contenedor > div {
+		width: 33.3%;
+		float: left;
+	}
+}
+
+footer h3 {
+	color: var(--white-color);
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+	margin-bottom: 20px;
+}
+footer h3 span {
+	color: var(--celeste-color);
+}
+div.terminos__condiciones ul li {
+	margin: 10px;
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+div.terminos__condiciones ul li:hover {
+	color: #59e9df;
+	cursor: pointer;
+}
+nav.redes__sociales {
+	text-align: center;
+}
+nav.redes__sociales a:hover {
+	color: #59e9df;
+}
+div.footer__informacion p{
+	font-size: 1.2em;
+}
+p.copyright {
+	background-color: #2e2e2e;
+	color: var(--white-color);
+	padding: 10px 0;
+	text-align: center;
+	margin: 20px 0 0 0;
+}
+p.copyright span{
+	color: var(--celeste-color);
+	text-transform: uppercase;
+}
+
+/* ==========================================================================
+							     FIN-FOOTER
+   ========================================================================== */
+
+/* ==========================================================================
+							     INICIO EFECTO OLA
+   ========================================================================== */
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.wave2{
+    position: absolute;
+    top: 0;
+	width: 100%;
+}
+/* ==========================================================================
+							     FIN EFECTO OLA
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.clearfix:before,
+.clearfix:after {
+		  content: " "; /* 1 */
+		  display: table; /* 2 */
+	  }
+   
+.clearfix:after {
+	   clear: both;
+   }
+/* ==========================================================================
+						  INICIO SLIDER NAV MOVIL
+   ========================================================================== */
+/*=======================NAV MOVIL MIN-WIDTH 770PX=============================*/
+.barra__movil{
+	position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    display: none;
+	z-index: 1;
+	background-color: #ccc;
+   }
+.navegador__movil{
+	   display: grid;
+	   grid-template-columns: 1fr 0.5fr 4fr;    
+   }
+div.logo__movil  {
+    display: grid;
+    justify-content: center;
+}
+div.logo__movil img {
+    width: 180px;
+    padding: 5px 0px;
+}
+@media screen and (max-width : 770px){
+	div.barra {
+		display: none;
+	}
+	.barra__movil{
+		display: block;
+	}
+	
+}
+
+@media screen and (min-width : 770px){
+	#hamb_movil{
+		display: none!important;
+	}
+	#slider_barra_movil{
+		left: -100%!important;
+	}
+}
+
+/*======================FIN NAV MOVIL MIN-WIDTH 770PX=============================*/
+
+/*====================== INICIO SLIDER NAV MOVIL ================================*/
+nav#slider_barra_movil {
+    position: fixed;
+	top: 0;
+	left: -100%;
+	bottom: 0;
+    display: block;
+    z-index: 1;
+	float: left;
+	width: 100%;
+	max-width: 30%;
+	height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+    transition: all 300ms;
+}
+nav#slider_barra_movil ul{
+	list-style: none;
+	opacity: 2;
+    width: auto;
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+	transition: all 300ms;
+}
+nav#slider_barra_movil li{
+	text-align: center;
+	margin: 25px 0px;
+}
+nav#slider_barra_movil a {
+			color: var(--white-color);
+			padding: 6px 0;
+            cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+}
+nav#slider_barra_movil li a:hover { color: #59e9df; }
+
+
+nav#slider_barra_movil	li a.sep { 
+			margin-top: 7px; 
+			padding-top: 14px; 
+			border-top: 1px solid lighten(#556270, 10%); 
+}
+#btn_slider_movil{
+			font-size: 2em;
+			color: var(--white-color);
+    		cursor: pointer;
+}
+
+#btn_slider_movil:hover{
+			color: red;
+}
+
+/*====================== FIN SLIDER NAV MOVIL ================================*/
+
+/*================== INICIO SLIDER NAV MOVIL HAMB ============================*/
+
+div.menu-trigger {
+    display: grid;
+    justify-content: flex-start;
+    align-content: center;
+    font-size: 1.8em;
+    border-radius: 5px;
+    -moz-transition: all 300ms;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+}
+
+div.menu-trigger i:hover { 
+    cursor: pointer;
+    color: var(--white-color);
+    }
+div.menu-trigger:hover:before { color: #fcfeff; }
+
+
+/*================== FIN SLIDER NAV MOVIL HAMB ============================*/
+
+/* ==========================================================================
+						  FIN SLIDER NAV MOVIL
+   ========================================================================== */
+
+
